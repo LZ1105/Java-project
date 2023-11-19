@@ -3,8 +3,8 @@ package Lucas1;
 public class ClasLucas {
 
 	public static void main(String[] args) {
-		System.out.println("Hello World."); // print greeting.
-
+		System.out.println("Hello World."); // print greeting
+/*
 		// vairable declarations
 		int a = 10;
 		int b;
@@ -29,5 +29,48 @@ public class ClasLucas {
 		System.out.println("s = " + s);
 
 	}
+*/
+//question 1
+		int height;
+		height = 10; 
+		for (int i = 0; i < height; i++) {
+			for (int j = 0; j < i; j++) {
+				System.out.print(" ");
+			}
+			
+			for (int j = 0; j < height; j++) {
+				System.out.print("#");
+			}
+			System.out.println();
+		}
 
+
+//question 2
+
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < height - i - 1; j++) {
+                System.out.print(" ");
+            }
+
+            for (int j = 0; j < height; j++) {
+                System.out.print("#");
+            }
+
+            System.out.println();
+        }
+        
+//question 3
+        
+        
+        	
+        
+    }
 }
+				
+			
+			
+
+
+		
+		
+				
