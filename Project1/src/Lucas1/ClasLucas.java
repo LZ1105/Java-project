@@ -61,7 +61,7 @@ public class ClasLucas {
         
 //question 3
         
-        for
+        for (int i = 0; i < ???
         
         	
         
