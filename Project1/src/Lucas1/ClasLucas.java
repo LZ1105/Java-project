@@ -61,6 +61,7 @@ public class ClasLucas {
         
 //question 3
         
+        for
         
         	
         
