@@ -61,12 +61,96 @@ public class ClasLucas {
         
 //question 3
         
-        for
+        int n = 9; 
+
+        for (int i = 1; i <= n; i += 2) {
+            for (int j = 0; j < (n - i) / 2; j++) {
+                System.out.print(" ");
+            }
+            for (int k = 0; k < i; k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+
+        for (int i = n - 2; i >= 1; i -= 2) {
+            for (int j = 0; j < (n - i) / 2; j++) {
+                System.out.print(" ");
+            }
+            for (int k = 0; k < i; k++) {
+                System.out.print("*");
+            }
+            System.out.println();
         
         	
         
     }
-}
+	}
+
+//question 4
+/*		int n =9;
+	    for (int i = 1; i <= n; i += 2) {
+	        for (int j = 0; j < (n - i) / 2; j++) {
+	            System.out.print(" ");
+	        }
+	        for (int k = 0; k < i; k++) {
+	            System.out.print("*");
+	        }
+	        System.out.println();
+	    }
+	
+	    for (int i = 1; i <= n; i += 2) {
+	        for (int j = 0; j < i / 2; j++) {
+	            System.out.print(" ");
+	        }
+	        for (int k = i; k < n; k++) {
+	            System.out.print("*");
+	        }
+	        System.out.println();
+	    }
+	}
+*/
+//question 5
+/*	int num = 5;
+			int denom = 7;
+
+		    int result = num / denom;
+
+		    if ((num < 0) != (denom < 0) && num % denom != 0) {
+		        result += (num > 0) ? 1 : -1;
+		    }
+		    return result;
+		    }
+		    }
+		
+		}
+*/
+//insertion sort
+	    public static void insertionSort(int[] arr) {
+	        int n = arr.length;
+
+	        for (int i = 1; i < n; ++i) {
+	            int key = arr[i];
+	            int j = i - 1;
+
+	            while (j >= 0 && arr[j] > key) {
+	                arr[j + 1] = arr[j];
+	                j = j - 1;
+	            }
+	            arr[j + 1] = key;
+	        }
+	    }
+
+	    public static void printArray(int[] arr) {
+	        for (int num : arr) {
+	            System.out.print(num + " ");
+	        }
+	        System.out.println();
+	    }
+
+	    }
+	   
 				
 			
 			
