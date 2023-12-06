@@ -82,7 +82,7 @@ public class ClasLucas {
                 System.out.print("*");
             }
             System.out.println();
-        
+
         	
         
     }
