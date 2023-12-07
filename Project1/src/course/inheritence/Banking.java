@@ -48,6 +48,13 @@ public class Banking {
 
 		Account acct9 = mergeAccount(acct4, acct5);
 //		if (acct9 == null) print error;
+		
+		Payable acct10 = new ChequingAccount(100010, 1200, 3.29, 6);
+		if (acct10 instanceof ChequingAccount) {
+			ChequingAccount ca1 = (ChequingAccount)acct10;
+		}
+		
+		
 
 	}
 	

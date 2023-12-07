@@ -1,6 +1,6 @@
 package course.inheritence;
 
-public class ChequingAccount extends Account {
+public class ChequingAccount extends Account implements Payable {
 	
 	private double monthlyFee;
 	private int numOfFreeTrxs;
@@ -55,6 +55,23 @@ public class ChequingAccount extends Account {
 	public String toString() {
 		return "ChequingAccount [" + super.toString() + ", monthlyFee=" + monthlyFee + ", numOfFreeTrxs=" + numOfFreeTrxs + ", numOfTrxs="
 				+ numOfTrxs + "]";
+	}
+
+	@Override
+	public String generateStatement() {
+		return "This is a Chequing Account statement";
+	}
+
+	@Override
+	public void addBPayee(String payee) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void payBill(String payee, double amount) {
+		// TODO Auto-generated method stub
+		
 	}
 
 

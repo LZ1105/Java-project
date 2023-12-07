@@ -13,6 +13,8 @@ public abstract class Account {
 		this.balance = balance;
 	}
 	
+	public abstract String generateStatement();
+	
 	public void deposit(double amount) {
 		this.balance += amount;
 	}

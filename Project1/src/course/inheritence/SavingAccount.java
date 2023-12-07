@@ -34,5 +34,10 @@ public class SavingAccount extends Account {
 	public String toString() {
 		return "SavingAccount " + super.toString() + ", interestRate=" + interestRate + "]";
 	}
+
+	@Override
+	public String generateStatement() {
+		return "This is a Saving Account statement";
+	}
 	
 }
