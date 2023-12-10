@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"course.classes_and_objects"},{"l":"course.complex_number"},{"l":"course.enum_and_constants"},{"l":"course.inheritence"},{"l":"course.overloading"},{"l":"course.package01"},{"l":"course.recursion"},{"l":"course.sorting"},{"l":"course.standard_io_stream"},{"l":"Lucas1"}];updateSearchResults();
