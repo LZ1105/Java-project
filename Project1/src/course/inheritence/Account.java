@@ -5,12 +5,14 @@ public abstract class Account {
 	private int accountNumber;
 	private double balance;
 	
-	public Account() {}
+	public Account() {
+		System.out.println("In Account().");
+	}
 	
 	public Account(int accountNumber, double balance) {
-		super();
 		this.accountNumber = accountNumber;
 		this.balance = balance;
+		System.out.println("In Account(int, double).");
 	}
 	
 	public abstract String generateStatement();

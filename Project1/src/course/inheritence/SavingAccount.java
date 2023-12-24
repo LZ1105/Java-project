@@ -4,13 +4,23 @@ public class SavingAccount extends Account {
 	
 	private double interestRate;
 	
-	public SavingAccount() {}
+	public SavingAccount() {
+		System.out.println("In SavingAccount().");
+	}
+
+	public SavingAccount(int accountNumber, double initialDeposit) {
+//		super(accountNumber, initialDeposit);
+//		this.interestRate = 0.0;
+		this(accountNumber, initialDeposit, 0.0);
+		System.out.println("In SavingAccount(int, double).");
+	}
 
 	public SavingAccount(int accountNumber, double initialDeposit, double interestRate) {
-		super();
-		this.setAccountNumber(accountNumber);
-		this.setBalance(initialDeposit);
+		super(accountNumber, initialDeposit);
+//		this.setAccountNumber(accountNumber);
+//		this.setBalance(initialDeposit);
 		this.interestRate = interestRate;
+		System.out.println("In SavingAccount(int, double, double).");
 	}
 	
 	@Override

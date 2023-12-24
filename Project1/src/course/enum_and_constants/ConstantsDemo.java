@@ -23,6 +23,7 @@ public class ConstantsDemo {
 	 * The lowest score in the marking system, typically is zero.
 	 */
 	public static final double LOWEST_MARK = 0;
+	
 	public static final double PASSING_RATE = 0.6;
 	public static final double GRADE_A = 0.9;
 	public static final double GRADE_B = 0.8;
