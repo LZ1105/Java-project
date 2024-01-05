@@ -158,7 +158,7 @@ public class Student {
 	}
 	
 	public String getLastName() {
-		return firstName;
+		return lastName;
 	}
 	
 	public int getAge() {
