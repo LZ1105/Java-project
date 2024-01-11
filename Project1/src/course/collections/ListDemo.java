@@ -28,7 +28,7 @@ public class ListDemo {
 		
 		System.out.println("Does sentences contain \"good\"? " + sentences.contains("good"));
 //		sentences.remove("good");
-		sentences.remove(1);
+//		sentences.remove(1);
 		System.out.println("After removing, set's size = " + sentences.size());
 		Iterator<String> it = sentences.iterator();
 		while (it.hasNext()) {
@@ -38,6 +38,23 @@ public class ListDemo {
 		Collections.sort(sentences);
 		System.out.println("------ After sorting ------");
 		for (Object s : sentences) {
+			System.out.println("Sentence: " + s);
+		}
+		
+		System.out.println("------ Fast fail demo ------");
+		// fast-fail
+		for (String s : sentences) {
+//		for (int i= sentences.size() - 1; i >= 0; i--) {
+//			String s = sentences.get(i);
+			if ("good".equals(s)) {
+				System.out.println("Removing \"" + s + "\" from sentences...");
+				sentences.remove(s);
+				System.out.println("Removed");
+//				i--;
+			}
+		}
+		System.out.println("------ After removing \"good\" ------");
+		for (String s : sentences) {
 			System.out.println("Sentence: " + s);
 		}
 
