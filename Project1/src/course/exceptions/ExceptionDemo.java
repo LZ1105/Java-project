@@ -5,16 +5,33 @@ public class ExceptionDemo {
 	public static void main(String[] args) {
 		
 		try {
-			double r = func1("10", "10");
+			double r = func1("1000", "200");
 			System.out.println("r = " +  r);
 		} catch (ServiceException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (AppException e) {
+//			e.printStackTrace();
+			printException(e);
 		}
 
 	}
 
-	private static double func1(String n1, String n2) throws ServiceException  {
+	private static void printException(AppException e) {
+//		System.err.println("Exception caught: " + e.getClass().getName() + " - " + e.getMessage());
+		Throwable t = e;
+		String errorInfo = "Exception caught: ";
+		while (t != null) {
+			System.err.println(errorInfo + t.getClass().getName() + " - " + t.getMessage());
+			errorInfo = "caused by: ";
+			StackTraceElement stes[] = t.getStackTrace();
+			for (StackTraceElement stElement : stes) {
+				System.err.println("\tat " + stElement.getClassName() + "." + stElement.getMethodName() + " - " + stElement.getFileName() + "(@ " + stElement.getLineNumber() + ")");
+			}
+			t = t.getCause();
+		}
+	}
+
+	private static double func1(String n1, String n2) throws ServiceException, AppException  {
 		try {
 			int len1 = n1.length();
 			int len2 = n2.length();
@@ -32,12 +49,13 @@ public class ExceptionDemo {
 //			throw new ServiceException(e);
 		} catch (InvalidNominatorException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+//			e.printStackTrace();
 			throw new ServiceException(e);
 		} catch (ServiceException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-			throw e;
+//			e.printStackTrace();
+//			throw e;
+			throw new AppException(e);
 		}
 	}
 
@@ -51,17 +69,19 @@ public class ExceptionDemo {
 			return r;
 		} catch (ZeroDenominatorException e) {
 			// strategy #1: keep quite, do nothing.
-			e.printStackTrace();
+//			e.printStackTrace();
 			return 0.0;
 		} catch (InvalidNominatorException e) {
 			// strategy #2: escalate the exception (possibly do something)
-			e.printStackTrace();
+//			e.printStackTrace();
 			throw e;
 		} catch (InvalidDenominatorException e) {
 			// strategy #3: escalate with translating/wrapping it in another exception object.
 			// optionally, do something before throwing the new exception.
-			e.printStackTrace();
+//			e.printStackTrace();
+//			System.err.println("---------------------");
 			throw new ServiceException(e);
+//			throw new ServiceException("Error occurred: " + e.getMessage());
 		} catch (Exception e) {
 			// have a more generic Exception class here for handling other exceptions.
 			throw new ServiceException(e);
