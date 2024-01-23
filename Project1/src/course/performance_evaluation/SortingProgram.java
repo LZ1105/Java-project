@@ -24,17 +24,57 @@ public class SortingProgram {
 		System.out.println("result = " + Arrays.toString(array));
 
 		array = new int[] {10, 20, 3, 60, 35, 59};
-		quickSort(array);
+		quickSort(array, 0, array.length - 1);
 		System.out.println("result = " + Arrays.toString(array));
+
 	}
 	
-	private static void quickSort(int[] array) {
+	private static void quickSort(int[] array, int low, int high) {
 		
-		throw new RuntimeException("Not implemented yet.");
-		
+		if (low < high) {
+			 
+            // pi is partitioning index, arr[p]
+            // is now at right place
+            int pi = partition(array, low, high); // O(n)
+ 
+            // Separately sort elements before
+            // partition and after partition
+            quickSort(array, low, pi - 1);
+            quickSort(array, pi + 1, high);
+		}
 	}
+	
+	// O(n)
+	private static int partition(int[] array, int low, int high) {
+        // Choosing the pivot
+        int pivot = array[high];
+ 
+        // Index of smaller element and indicates
+        // the right position of pivot found so far
+        int i = (low - 1);
+ 
+        for (int j = low; j <= high - 1; j++) {
+ 
+            // If current element is smaller than the pivot
+            if (array[j] < pivot) {
+ 
+                // Increment index of smaller element
+                i++;
+                // swap
+                int temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+        // swap
+        int temp = array[i + 1];
+        array[i + 1] = array[high];
+        array[high] = temp;
+        return (i + 1);
+    }
 
 	// Divide and Conquer
+	// O(nlogn)
 	private static void mergeSort(int[] array) {
 		if (array.length < 2) {
 			return;
@@ -83,6 +123,7 @@ public class SortingProgram {
 		}
 	}
 
+	// O(n^2)
 	private static void insertionSort(int[] array) {
 		int i = 1;
 		while (i < array.length) {
@@ -97,6 +138,7 @@ public class SortingProgram {
 		}
 	}
 
+	// O(n^2)
 	private static void selectionSort(int[] array) {
 		for (int i = 0; i < array.length; i++) {
 			for (int j = i + 1; j < array.length; j++) {
